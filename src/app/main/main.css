@@ -3,28 +3,108 @@ h1{
   font-size: 7vh;
 }
 
-#info{
-}
+
 
 .word{
   display: block;
   position: absolute;
   left: 2%;
   top: 52%;
-  background-color: #66c4ff;
 }
 .word button{
-  background-color: #66c4ff;
+  background-color: #009fff;
   position:relative;
   display: block;
   padding: 10px;
+  padding-left: 80px;
+  padding-right: 80px;
   font-size: 4vh;
   border: none;
+  z-index: 5;
+  font-family: "Archivo Black", sans-serif;
+}
+
+.word:hover{
+  z-index: 3;
 }
 .word button:hover{
   transform: scale(1.5);
   transition: 0.1s;
-  background-color: #bae3ff;
+  background-color: rgba(182, 182, 182, 0.5);
   rotate: 3deg;
+  border: 2px, #83cfff, solid;
+  z-index: 5;
+}
 
+#triangle::before{
+  content: "";
+  position: absolute;
+  display: block;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(255, 255, 255);
+  top:0;
+  left: 0;
+  clip-path: polygon(90% 0, 0 80%, 70% 90%);
+  z-index: 2;
+  opacity: 0;
+}
+
+#triangle2::before{
+  position: absolute;
+  content:"";
+  display: block;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(255, 0, 183, 0.55);
+  top:0;
+  left: 0;
+  clip-path: polygon(95% 10%, 0 80%, 75% 95%);
+  z-index: 1;
+  opacity: 0;
+
+}
+
+
+
+.word button:hover #triangle::before{
+  opacity: 1;
+}
+
+.word button:hover #triangle2::before{
+  transition:opacity .2s;
+  opacity: 1;
+}
+
+.textButton{
+  position: relative;
+  display: block;
+  top:0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 5;
+}
+
+.gray{
+  color:gray;
+}
+
+.red{
+  display: none;
+  color:red;
+  position:absolute;
+  clip-path: polygon(110% -10%, -30% 80%, 97% 90%);
+}
+
+.gray{
+  color: rgb(0, 33, 255);
+}
+
+.word button:hover .gray{
+  color: rgba(22, 26, 34, 0.9);
+}
+
+.word button:hover .red{
+  display: block;
 }
