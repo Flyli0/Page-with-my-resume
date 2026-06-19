@@ -12,28 +12,39 @@ h1{
   top: 52%;
 }
 .word button{
-  background-color: #009fff;
+  background-color: transparent;
   position:relative;
   display: block;
   padding: 10px;
-  padding-left: 80px;
-  padding-right: 80px;
-  font-size: 4vh;
+  padding-left: 70px;
+  padding-right: 70px;
+  font-size: 5vh;
   border: none;
   z-index: 5;
-  font-family: "Archivo Black", sans-serif;
+  font-family: "Fugaz One", sans-serif;
+  font-weight: bold;
 }
 
 .word:hover{
   z-index: 3;
 }
 .word button:hover{
-  transform: scale(1.5);
+  animation: pop 0.3s ease forwards;
   transition: 0.1s;
-  background-color: rgba(182, 182, 182, 0.5);
   rotate: 3deg;
-  border: 2px, #83cfff, solid;
   z-index: 5;
+}
+
+@keyframes pop{
+  0%{
+    transform: scale(1);
+  }
+  50%{
+    transform: scale(1.5);
+  }
+  100%{
+    transform: scale(1.4);
+  }
 }
 
 #triangle::before{
@@ -98,7 +109,7 @@ h1{
 }
 
 .gray{
-  color: rgb(0, 33, 255);
+  color: rgb(0, 16, 115);
 }
 
 .word button:hover .gray{
