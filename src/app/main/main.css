@@ -1,11 +1,30 @@
-.info{
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  flex-direction: column;
-  gap: 20px;
+
+h1{
+  font-size: 7vh;
+}
+
+#info{
+}
+
+.word{
+  display: block;
+  position: absolute;
+  left: 2%;
+  top: 52%;
   background-color: #66c4ff;
-  width: 50%;
-  margin: auto;
+}
+.word button{
+  background-color: #66c4ff;
+  position:relative;
+  display: block;
+  padding: 10px;
+  font-size: 4vh;
+  border: none;
+}
+.word button:hover{
+  transform: scale(1.5);
+  transition: 0.1s;
+  background-color: #bae3ff;
+  rotate: 3deg;
 
 }
