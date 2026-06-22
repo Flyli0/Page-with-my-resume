@@ -13,15 +13,15 @@ export class Main {
     "About Me", "Education", "Skills", "Projects", "Contacts"
   ].map((word,index,array) => {
     if(index%2 == 0){
-      this.radius = 620;
+      this.radius = 43;
     }
     else{
-      this.radius = 600;
+      this.radius = 41;
     }
     const angle = index*35/array.length-15 ;
     return{
       word,
-      transform: `rotate(${angle}deg) translateX(${this.radius}px)`,
+      transform: `rotate(${angle}deg) translateX(${this.radius}vw)`,
     }
   })
 

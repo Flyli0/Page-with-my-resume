@@ -1,6 +1,8 @@
 
 h1{
-  font-size: 7vh;
+  font-size: 5vh;
+  margin:0;
+  position: sticky;
 }
 
 
@@ -8,8 +10,8 @@ h1{
 .word{
   display: block;
   position: absolute;
-  left: 2%;
-  top: 52%;
+  left: 0;
+  top: 50vh;
 }
 .word button{
   background-color: transparent;
@@ -23,6 +25,7 @@ h1{
   z-index: 5;
   font-family: "Fugaz One", sans-serif;
   font-weight: bold;
+
 }
 
 .word:hover{
@@ -118,4 +121,37 @@ h1{
 
 .word button:hover .red{
   display: block;
+}
+
+#back{
+  position: absolute;
+  margin: 0;
+  display:block;
+  width:100vw;
+  height: 100vh;
+  overflow: hidden;
+}
+
+#info{
+  margin:0;
+}
+
+.background-video{
+  display: block;
+  margin:0;
+  padding:0;
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  z-index: -2;
+  object-position: center;
+
+}
+
+footer{
+  display: block;
+  position: relative;
+  bottom: 0;
+  margin-top: 100vh;
 }
