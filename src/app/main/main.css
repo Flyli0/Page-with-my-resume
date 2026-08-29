@@ -2,7 +2,7 @@
 h1{
   font-size: 5vh;
   margin:0;
-  position: sticky;
+  position: absolute;
 }
 
 
@@ -154,4 +154,16 @@ footer{
   position: relative;
   bottom: 0;
   margin-top: 100vh;
+}
+
+
+.transition{
+  position: fixed;
+  background: black;
+  display: block;
+  clip-path: polygon(0 100%, 20% 0, 100% 0, 80% 100%);
+  width: 120%;
+  height: 100%;
+
+  transition: translate 0.3s ease-in-out;
 }

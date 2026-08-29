@@ -1,17 +1,20 @@
 import {Component, ElementRef, ViewChild} from '@angular/core';
-import {RouterLink, RouterOutlet} from '@angular/router';
+import {Router, RouterLink, RouterOutlet} from '@angular/router';
+import {NgStyle} from '@angular/common';
 
 @Component({
   selector: 'app-main',
   imports: [
     RouterOutlet,
-    RouterLink
+    RouterLink,
+    NgStyle
   ],
   templateUrl: './main.html',
   styleUrl: './main.css',
 })
 
 export class Main {
+  constructor(private router: Router) { }
   radius = 1000
   links = ["about","education","skills","projects","contacts"];
   words = [
@@ -47,4 +50,39 @@ export class Main {
 
     console.log('muted after:', v.muted);
   }
+
+  //transition properties
+  transitionStyle = {
+    position: 'fixed',
+    background: 'black',
+    display: 'block',
+    "clip-path": 'polygon(0 100%, 20% 6%, 40% 6%, 40% 0,1000% 0, 1000% 100%)',
+    width: '600%',
+    height: '100%',
+    transition: 'transform 1.78s ease-in-out',
+    transform: 'translateX(100%)',
+    "z-index": 5,
+
+  }
+
+  async toGo(path:string){
+    this.onTransition();
+    await this.sleep(1600);
+    this.router.navigate([path]);
+    this.transitionStyle["transition"] = "transform 0.1s ease";
+    this.transitionStyle['transform'] = `translateX(100%)`;
+
+  }
+  sleep(ms:number){
+    return new Promise(resolve => setTimeout(resolve, ms));
+  }
+  onTransition(){
+    this.transitionStyle = {
+      ...this.transitionStyle,
+      transition: 'transform 2s ease-in-out',
+      transform: 'translateX(-80%)'
+    }
+  }
+
+
 }

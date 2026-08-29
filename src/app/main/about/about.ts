@@ -1,4 +1,4 @@
-import {ChangeDetectorRef, Component, ElementRef, OnInit, ViewChild} from '@angular/core';
+import {ChangeDetectorRef, Component, ElementRef, OnInit, SimpleChanges, ViewChild} from '@angular/core';
 import {NgStyle} from '@angular/common';
 
 @Component({
@@ -24,7 +24,7 @@ export class About{
   forward_y = true;
   moveImage(){
 
-    if(this.top+this.dy > 100 || this.top-this.dy < -100) {
+    if(this.top+this.dy > 50 || this.top-this.dy < -20) {
       this.forward_y = !this.forward_y;
     }
     if (this.left+this.dx > 50 || this.left-this.dx < -50) {
@@ -57,7 +57,41 @@ export class About{
   }
 
   counter = 0;
+  transitionStyle = {
+    position: 'fixed',
+    background: 'black',
+    display: 'block',
+    "clip-path": 'polygon(0 0, 0 100%, 100% 100%, 80% 0)',
+    width: '200%',
+    height: '100%',
+    transition: 'transform 1.8s ease-in-out',
+    transform: 'translateX(0vw)',
+    'z-index': 5
+  }
+
+  async toMove(){
+    await new Promise(resolve => setTimeout(resolve,1000))
+  }
+  ngAfterViewInit(){
+    requestAnimationFrame(()=>{
+      this.transitionStyle = {
+        ...this.transitionStyle,
+        transition: 'transform 2s ease-in-out',
+        transform: 'translateX(-100%)'
+      }
+    });
+
+  }
+  ngOnBack(){
+    this.transitionStyle = {
+      ...this.transitionStyle,
+      transition: 'transform 0.1s ease',
+      transform: 'translateX(100%)',
+
+    }
+  }
   ngOnInit(){
+
     this.moveImage()
   }
 
