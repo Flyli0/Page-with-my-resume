@@ -1,0 +1,58 @@
+.page{
+  background-color: #009dff;
+  overflow: hidden;
+}
+
+.k{
+  z-index: 2;
+  font-size: 5vw;
+  color: white;
+  font-family: "Fugaz One", cursive;
+  display: inline;
+}
+
+.logo{
+  position: absolute;
+  width: 100px;
+  height: 100px;
+  margin-top: 1vh;
+}
+
+.block{
+  display: flex;
+  padding: 10px;
+  border: 4px #222222 groove;
+  background: #e4eff1;
+  color: #000000;
+  position: relative;
+  width: 250px;
+  justify-content: center;
+  font-weight: bold;
+  font-size: 1.5vw;
+}
+
+.kbtu{
+  position: absolute;
+  top: 10px;
+  left: 25px;
+}
+
+.book{
+  rotate: 35deg;
+  z-index: 0;
+  width: 75vw;
+  position: absolute;
+  left: 30%;
+  top: 6%;
+}
+
+
+
+.hat{
+  rotate: -35deg;
+  z-index: 0;
+  width: 100vw;
+  position: absolute;
+  left: 2%;
+  top: 6%;
+}
